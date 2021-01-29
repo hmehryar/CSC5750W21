@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tickets page</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- W3.CSS link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../Contents/Content.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="navbar-customized bg-danger">
+        <li><a href="#"><b>Little Ceasar Arena</b></a></li>
+        <li><a href="/Views/Arena.html">Arena Page</a></li>
+        <li><a href="/Views/Events.html">Events Page</a></li>
+        <li><a href="/Views/Tickets.html">Tickets Page</a></li>
+    </ul>
+
+    <div class="container">
+        <h1 class="text-warning"> Tickets Page</h1>
+
+
+        <form method="get" action="http://www.tipjar.com/cgi-bin/test">
+            <div class="form-horizontal">
+                <h4>Buy a Ticket</h4>
+                <hr>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="ArenaSeatingChart">Arena Seating Chart</label>
+                    <div class="col-md-10">
+                        <img src="../Images/ArenaSeatingChart/seating-chart-01-little-seasar.JPG" class="arena-seating-chart" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CustomerName">CustomerName</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="CustomerName is required!" id="CustomerName" name="CellPhone" type="tel" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CustomerEmail">CustomerEmail</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="Email Address is required!" id="CustomerEmail" name="EmailAddress" type="email" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CustomerEmail" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Events">Events</label>
+                    <div class="col-md-10">
+                        <select id="Events" class="form-control">
+                            <option value="1">The Millennium Tour 2021</option>
+                            <option value="2">The Weekend</option>
+                            <option value="3">Justin Bieber</option>
+                            <option value="4" selected>Rage Agaist the Machine</option>
+                            <option value="5">My Chemical Romance</option>
+                            <option value="6">Alan Jackson</option>
+                            <option value="7">Harry Styles</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="EventDate">EventDate</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="EventDate is required!" id="EventDate" name="EventDate" type="date" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="EventDate" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="SeatCategory">SeatCategory</label>
+                    <div class="col-md-10">
+                        <select id="SeatCategory" class="form-control col-md-9">
+                            <option value="1">First Class</option>
+                            <option value="2">Middle Class</option>
+                            <option value="3">Regular</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="NumberOfTickets">Number Of Tickets (allow 1 to 21)</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="NumberOfTickets is required!" id="NumberOfTickets" name="CellPhone" type="tel" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="NumberOfTickets" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="PaymentType">PaymentType</label>
+                    <div class="col-md-10">
+                        <select id="PaymentType" class="form-control col-md-9">
+                            <option value="1">Debit</option>
+                            <option value="2">Credit</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Buy Ticket" class="btn btn-default btn-success">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer bg-info">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    Arena Name: Little Ceasar Arena
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <div><b>Arena Address:</b> 2645 Woodward Ave, Detroit, MI 48201</div>
+                <div><b>Arena Telphone:</b> (313) 471-7000</div>
+                <div><b>Email Address:</b>  info@littleceasararena.com</div>
+            </div>
+            <div class="col-md-4">
+                <p>© 2021 - Little Ceasar Arena</p>
+            </div>
+        </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+</html>
