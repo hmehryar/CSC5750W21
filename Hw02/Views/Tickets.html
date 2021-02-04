@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tickets page, v2</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- W3.CSS link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- DataTables CSS and script links -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+    <link href="../Contents/Content.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="navbar-customized bg-danger">
+        <li><a href="#"><b>Little Ceasar Arena</b></a></li>
+        <li><a href="/Views/Arena.html">Arena Page</a></li>
+        <li><a href="/Views/Events.html">Events Page</a></li>
+        <li><a href="/Views/Tickets.html">Tickets Page</a></li>
+    </ul>
+
+    <div class="container">
+        <h1 class="text-warning"> Tickets Page, v2</h1>
+
+
+        <form method="get" action="http://www.tipjar.com/cgi-bin/test">
+            <div class="form-horizontal">
+                <h4>Buy a Ticket</h4>
+                <hr>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="ArenaSeatingChart">Arena Seating Chart</label>
+                    <div class="col-md-10">
+                        <img src="../Images/ArenaSeatingChart/seating-chart-01-little-seasar.JPG" class="arena-seating-chart" />
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CustomerName">CustomerName</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="CustomerName is required!" id="CustomerName" name="CellPhone" type="tel" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="CustomerEmail">CustomerEmail</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="Email Address is required!" id="CustomerEmail" name="EmailAddress" type="email" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CustomerEmail" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Events">Events</label>
+                    <div class="col-md-10">
+                        <select id="Events" class="form-control">
+                            <option value="1">The Millennium Tour 2021</option>
+                            <option value="2">The Weekend</option>
+                            <option value="3">Justin Bieber</option>
+                            <option value="4" selected>Rage Agaist the Machine</option>
+                            <option value="5">My Chemical Romance</option>
+                            <option value="6">Alan Jackson</option>
+                            <option value="7">Harry Styles</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="EventDate">EventDate</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="EventDate is required!" id="EventDate" name="EventDate" type="date" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="EventDate" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="NumberOfTickets">Number Of Tickets (allow 1 to 21)</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="NumberOfTickets is required!" id="NumberOfTickets" name="NumberOfTickets" type="tel" value="">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="NumberOfTickets" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="SeatType">SeatType</label>
+                    <div class="col-md-10">
+                        <select id="SeatType" class="form-control col-md-9">
+                            <!--<option value="1">First Class</option>
+                <option value="2">Middle Class</option>
+                <option value="3">Regular</option>-->
+                        </select>
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="SeatCost">Seat Cost ($)</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="SeatCost is required!" id="SeatCost" name="SeatCost" type="tel" value="" readonly>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="SeatCost" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Subtotal">Subtotal</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="Subtotal is required!" id="Subtotal" name="Subtotal" type="tel" value="" readonly>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Subtotal" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Tax">Tax</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="Tax is required!" id="Tax" name="Tax" type="tel" value="" readonly>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Tax" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="Total">Total</label>
+                    <div class="col-md-10">
+                        <input class="form-control text-box single-line" data-val="true" data-val-required="Total is required!" id="Total" name="CellPhone" type="tel" value="" readonly>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Total" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="PaymentType">PaymentType</label>
+                    <div class="col-md-10">
+                        <select id="PaymentType" class="form-control col-md-9">
+                            <option value="1">Credit</option>
+                            <option value="2">Paypal</option>
+                            <option value="2">Venmo</option>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" class="btn btn-default btn-success">
+                        <input type="reset" value="Reset" class="btn btn-default btn-primary">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer bg-info">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    Arena Name: Little Ceasar Arena
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <div><b>Arena Address:</b> 2645 Woodward Ave, Detroit, MI 48201</div>
+                <div><b>Arena Telphone:</b> (313) 471-7000</div>
+                <div><b>Email Address:</b>  info@littleceasararena.com</div>
+            </div>
+            <div class="col-md-4">
+                <p>© 2021 - Little Ceasar Arena</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        "use strict";
+        var seats = [
+            [
+                "Regular",
+                25
+            ],
+            [
+                "Mezzanine",
+                50
+            ],
+            [
+                "Middle Class",
+                70
+            ],
+            [
+                "First Class",
+                100
+            ],
+            
+        ];
+        $(document).ready(function () {
+            //================================================================
+            // Script-level variables
+            //================================================================
+            var subtotal=0;
+            var tax=0;
+            var total=0;
+
+            //================================================================
+            // Setting SeatType Dropdown
+            //================================================================
+            var options = "";
+            for (var i = 0; i < seats.length; i++) {
+                options += '<option value="' + seats[i][1] + '">' + seats[i][0] + '</option>';
+            }
+            $('#SeatType').append(options);
+
+
+            $("#SeatType").change(function () {
+                var str = "";
+
+                $("#SeatType option:selected").each(function () {
+                    var numberOfTickets = $("#NumberOfTickets").val();
+                    var seatCost = $(this).val();
+                    $("#SeatCost").val(seatCost);
+
+                    str += $(this).text() + " " + $(this).val() + " " + numberOfTickets;
+
+                    subtotal = numberOfTickets * seatCost;
+                    tax = subtotal * 0.06;
+                    total = subtotal + tax;
+
+                    console.log(subtotal);
+                    console.log(tax);
+                    console.log(total);
+
+                    $("#Subtotal").val(subtotal);
+                    $("#Tax").val(tax);
+                    $("#Total").val(total);
+                });
+
+            });
+        })
+    </script>
+</body>
+</html>

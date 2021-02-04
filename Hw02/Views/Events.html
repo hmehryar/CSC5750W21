@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Events page, v2</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- W3.CSS link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- DataTables CSS and script links -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+    <link href="../Contents/Content.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="navbar-customized bg-danger">
+        <li><a href="#"><b>Little Ceasar Arena</b></a></li>
+        <li><a href="/Views/Arena.html">Arena Page</a></li>
+        <li><a href="/Views/Events.html">Events Page</a></li>
+        <li><a href="/Views/Tickets.html">Tickets Page</a></li>
+    </ul>
+    <div class="container">
+        <h1 class="text-warning"> Events Page</h1>
+        <hr />
+        <table class="table table-sm table-hover table-responsive table-responsive-lg" id="tblMenu">
+            <thead>
+                <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Ticket Price Range</th>
+                    <th scope="col">Images related to event</th>
+                    <!--<th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">The Millennium Tour 2021</th>
+                    <td>APR 09 / 2021</td>
+                    <td>10 $ - 40 $</td>
+
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-millenium_tour_600x600_thumb-8fbb1c836f.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">The Weekend</th>
+                    <td>JUNE 28 / 2021</td>
+                    <td>30 $ - 50 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-weeknd_313_presents_600x600_thumb-b47621808a.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Justin Bieber</th>
+                    <td>JUNE 28 / 2021</td>
+                    <td>20 $ - 40 $</td>
+
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-Justin_Bieber_Detroit_2021_600x600-f765928793.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Rage Agaist the Machine</th>
+                    <td>JUNE 26 - 27 / 2021</td>
+                    <td>40 $ - 60 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-rage_against_the_machine_313_presents_600x600_thumb-1-1289b510c4-1-79d1397c52.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">My Chemical Romance</th>
+                    <td>SEP 15 / 2021</td>
+                    <td>30 $ - 40 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-my_chemical_romance_313_presents_600x600_thumb-d028253a7b.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Alan Jackson</th>
+                    <td>SEP 17 / 2021</td>
+                    <td>70 $ - 80 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-alan_jackson_2021_313_presents_600x600_v2-9488592118.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Harry Styles</th>
+                    <td>SEP 20 / 2021</td>
+                    <td>50 $ - 70 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-HarryStyles_1080x1080_2021-8ffc82717d.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Tame Impala</th>
+                    <td>OCT 05 / 2021</td>
+                    <td>35 $ - 50 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-tame_impala_313_presents_600x600_thumb-f5749392fc.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Dan + Shay</th>
+                    <td>DEC 03 / 2021</td>
+                    <td>50 $ - 75 $</td>
+                    <td>
+                        <figure class="figure">
+                            <img src="../Images/Events/events-Dan_shay_2021_600x600_thumb-cd95d10d5c.jpg" class="figure-img img-fluid rounded img-thumbnail event-img-width" alt="...">
+                        </figure>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="footer bg-info">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    Arena Name: Little Ceasar Arena
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <div><b>Arena Address:</b> 2645 Woodward Ave, Detroit, MI 48201</div>
+                <div><b>Arena Telphone:</b> (313) 471-7000</div>
+                <div><b>Email Address:</b>  info@littleceasararena.com</div>
+            </div>
+            <div class="col-md-4">
+                <p>© 2021 - Little Ceasar Arena</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        "use strict";
+        $(document).ready(function () {
+
+            //================================================================
+            // Script-level variables
+            //================================================================
+            var data;
+            var arrUnnamed;
+
+            //================================================================
+            // getAndShowData
+            //================================================================
+            function loadEvents() {
+
+                // Get data
+                
+                arrUnnamed = JSON.parse(localStorage.getItem("localArrayUnnamed"));
+                data=JSON.parse(localStorage.getItem("localArrayUnnamed"))
+
+                // Show data
+                $('#tblMenu').DataTable(
+                    {
+                        "data": data,
+                        "autoWidth": false
+                    });
+
+            }
+            loadEvents();
+            
+        })
+    </script>
+</body>
+</html>

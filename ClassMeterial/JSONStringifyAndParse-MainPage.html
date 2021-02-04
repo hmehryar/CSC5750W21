@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!--==================================================================
+//
+// Title: JSON Stringify And Parse - Main Page
+// Description:
+//   This web page demonstrates converting data to JSON format using 
+// stringify, and converting data from JSON format using parse.  It 
+// also demonstrates sending data to another page via localStorage.
+// It refers to the following files:
+//   Utilities.js
+//   JSONStyles.css
+// 
+//=================================================================-->
+
+<head>
+
+  <title>JSON Stringify And Parse - Main Page</title>
+	<meta charset="UTF-8">
+  <meta name="author" content="Dan Ouellette">
+  <meta name="description" content="JSON Stringify And Parse - Main Page">
+  <meta name="keywords" content="JavaScript, storage">
+  <script src="Utilities.js"></script>
+  <link rel="stylesheet" type="text/css" href="JSONStyles.css">
+
+  <script type="text/javascript">
+    "use strict";
+    
+    //================================================================
+    // Script-level variables
+    //================================================================
+    var num = 57;
+    var name = "Luisa";
+    var jsobj = {"name":"Robert", "age":30, "city":"Flagstaff"}; 
+    var arrUnnamed =
+      [
+        ["Boston",  1630],
+        ["Detroit", 1701],
+        ["Austin",  1839],
+        ["Seattle", 1851]
+      ];
+    var arrNamed =
+      { "cities":
+        [
+          ["Boston",  1630],
+          ["Detroit", 1701],
+          ["Austin",  1839],
+          ["Seattle", 1851]
+        ]
+      };
+    
+    //================================================================
+    // clearFields
+    //================================================================
+    function clearFields()
+    {
+      hRawData.innerHTML = "Raw data";
+      tRawData.value = "";
+      tStringifyData.value = "";
+      tParseData.value = "";
+    }
+    
+    //================================================================
+    // convertArrayNamed
+    //================================================================
+    function convertArrayNamed()
+    {
+      convertToAndFromJSON(arrNamed);
+    }
+    
+    //================================================================
+    // convertArrayUnnamed
+    //================================================================
+    function convertArrayUnnamed()
+    {
+      convertToAndFromJSON(arrUnnamed);
+    }
+    
+    //================================================================
+    // convertObject
+    //================================================================
+    function convertObject()
+    {
+      convertToAndFromJSON(jsobj);
+    }
+    
+    //================================================================
+    // convertNumber
+    //================================================================
+    function convertNumber()
+    {
+      convertToAndFromJSON(num);
+    }
+    
+    //================================================================
+    // convertString
+    //================================================================
+    function convertString()
+    {
+      convertToAndFromJSON(name);
+    }
+    
+    //================================================================
+    // convertToAndFromJSON
+    //================================================================
+    function convertToAndFromJSON(obj)
+    {
+    
+      // Clear fields
+      clearFields();
+      
+      // Show raw object
+      hRawData.innerHTML = "Raw data (object type: " + typeof(obj) + ")";
+      tRawData.value = obj;
+
+      // Stringify and show object
+      var objStringify = JSON.stringify(obj);
+      tStringifyData.value = objStringify;
+
+      // Parse and show object
+      var objParse = JSON.parse(objStringify);
+      tParseData.value = objParse;
+
+    }
+    
+    //================================================================
+    // sendDataViaLocalStorage
+    //================================================================
+    function sendDataViaLocalStorage()
+    {
+
+      // Clear storage fields
+      localStorage.removeItem("localNumber");
+      localStorage.removeItem("localString");
+      localStorage.removeItem("localObject");
+      localStorage.removeItem("localArrayUnnamed");
+      localStorage.removeItem("localArrayNamed");
+      
+      // Place scalar values in storage
+      localStorage.setItem("localNumber", num);
+      localStorage.setItem("localString", name);
+      
+      // Place objects (including arrays) in local storage
+      // Objects must be stringified when placed in localStorage
+      localStorage.setItem("localObject", JSON.stringify(jsobj)); 
+      localStorage.setItem("localArrayUnnamed", JSON.stringify(arrUnnamed));
+      localStorage.setItem("localArrayNamed", JSON.stringify(arrNamed));
+
+      // The following won't properly place objects in local storage
+      // because they aren't stringified
+      //localStorage.setItem("localObject", jsobj);  
+      //localStorage.setItem("localArray", arrUnnamed);
+      //localStorage.setItem("localArray", arrNamed);
+      
+      // Open other page
+      window.open("JSONStringifyAndParse-DataPage.html", "_self");
+
+    }   
+    
+  </script>
+  
+</head>
+
+<!--==================================================================
+// Body
+//=================================================================-->
+<body id="bPage" onload="randomizeBackgroundColor()">
+
+  <h1>JSON Stringify And Parse - Main Page</h1>
+
+  <!--================================================================
+  // Button row
+  //===============================================================-->
+
+  <button 
+    type="button" 
+    onclick="convertNumber()"
+  >
+    Convert number
+  </button>
+  &nbsp;&nbsp;
+
+  <button 
+    type="button" 
+    onclick="convertString()"
+  >
+    Convert string
+  </button>
+  &nbsp;&nbsp;
+
+  <button 
+    type="button" 
+    onclick="convertArrayUnnamed()"
+  >
+    Convert unnamed array
+  </button>
+  &nbsp;&nbsp;
+
+  <button 
+    type="button" 
+    onclick="convertArrayNamed()"
+  >
+    Convert named array
+  </button>
+  &nbsp;&nbsp;
+
+  <button 
+    type="button" 
+    onclick="convertObject()"
+  >
+    Convert object
+  </button>
+  <br><br>
+  
+  <button 
+    type="button" 
+    onclick="clearFields()"
+  >
+    Clear fields
+  </button>
+  &nbsp;&nbsp;
+  
+  <button 
+    type="button" 
+    onclick="sendDataViaLocalStorage()"
+  >
+    Send data to Data Page via localStorage
+  </button>
+  &nbsp;&nbsp;
+  
+  <hr>
+
+  <!--================================================================
+  // Data rows
+  //===============================================================-->
+  
+  <h2 id="hRawData">Raw data</h2>
+  <input id="tRawData" readonly>
+  <hr>
+  
+  <h2>Data after calling JSON.stringify (to JSON format)</h2>
+  <input id="tStringifyData" readonly>
+  <hr>
+  
+  <h2>Data after JSON.parse (to JavaScript format)</h2>
+  <input id="tParseData" readonly>
+  <hr>
+
+</body>
+ 
+</html>

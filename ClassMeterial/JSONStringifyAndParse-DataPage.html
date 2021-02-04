@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!--==================================================================
+//
+// Title: JSON Stringify And Parse - Data Page
+// Description:
+//   This web page demonstrates receiving data from another page via 
+// localStorage.  It refers to the following files:
+//   Utilities.js
+//   JSONStyles.css
+// 
+//=================================================================-->
+
+<head>
+
+  <title>JSON Stringify And Parse - Data Page</title>
+	<meta charset="UTF-8">
+  <meta name="author" content="Dan Ouellette">
+  <meta name="description" content="JSON Stringify And Parse - Main Page">
+  <meta name="keywords" content="JavaScript, storage">
+  <script src="Utilities.js"></script>
+  <link rel="stylesheet" type="text/css" href="JSONStyles.css">
+
+  <script type="text/javascript">
+    "use strict";
+    
+    //================================================================
+    // Script-level variables
+    //================================================================
+    var num;
+    var name;
+    var jsobj;
+    var arrUnnamed;
+    var arrNamed;
+
+    //================================================================
+    // getAndShowData
+    //================================================================
+    function getAndShowData()
+    {
+    
+      // Get data
+      num = localStorage.getItem("localNumber");
+      name = localStorage.getItem("localString");
+      jsobj = JSON.parse(localStorage.getItem("localObject"));
+      arrUnnamed = JSON.parse(localStorage.getItem("localArrayUnnamed"));
+      arrNamed = JSON.parse(localStorage.getItem("localArrayNamed"));
+    
+      // Show data
+      lNumber.innerHTML = num;
+      lString.innerHTML = name;
+      lObject.innerHTML = jsobj + 
+        "<br> Name: " + jsobj.name +
+        "<br> Age: " + jsobj.age +
+        "<br> City: " + jsobj.city;
+        
+      // Loop to get unnamed array data
+      lArrayUnnamed.innerHTML = "";
+      for (var i = 0; i < arrUnnamed.length; i++)
+        lArrayUnnamed.innerHTML = 
+          lArrayUnnamed.innerHTML + "<br>" + 
+          arrUnnamed[i][0] + ", " + arrUnnamed[i][1];
+        
+      // Loop to get named array data
+      lArrayNamed.innerHTML = "";
+      for (var i = 0; i < arrNamed.cities.length; i++)
+        lArrayNamed.innerHTML = 
+          lArrayNamed.innerHTML + "<br>" + 
+          arrNamed.cities[i][0] + ", " + arrNamed.cities[i][1];
+      
+    }
+    
+    //================================================================
+    // returnToMainPage
+    //================================================================
+    function returnToMainPage()
+    {
+      window.open("JSONStringifyAndParse-MainPage.html", "_self");
+    }   
+    
+  </script>
+  
+</head>
+ 
+<body id="bPage" onload="randomizeBackgroundColor();getAndShowData()">
+
+  <h1>JSON Stringify And Parse - Data Page</h1>
+  
+  <button 
+    type="button" 
+    onclick="returnToMainPage()"
+  >
+    Return to Main Page 
+  </button>
+  &nbsp;&nbsp;
+  
+  <hr>
+  
+  <h2>Received Data</h2>
+
+  <label>Number:</label><label id="lNumber">(number)</label>
+  <br><br>
+
+  <label>String:</label><label id="lString">(string)</label>
+  <br><br>
+
+  <label>Object:</label><label id="lObject">(object)</label>
+  <br><br>
+
+  <label>Unnamed array:</label><label id="lArrayUnnamed">(array)</label>
+  <br><br>
+
+  <label>Named array:</label><label id="lArrayNamed">(array)</label>
+  <br><br>
+
+  <hr>
+
+</body>
+ 
+</html>

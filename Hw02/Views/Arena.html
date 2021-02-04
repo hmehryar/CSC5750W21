@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Arena page, v2</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- W3.CSS link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- DataTables CSS and script links -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+    <link href="../Contents/Content.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="navbar-customized bg-danger">
+        <li><a href="#"><b>Little Ceasar Arena</b></a></li>
+        <li><a href="/Views/Arena.html">Arena Page</a></li>
+        <li><a href="/Views/Events.html">Events Page</a></li>
+        <li><a href="/Views/Tickets.html">Tickets Page</a></li>
+    </ul>
+    <div class="container">
+        <h1 class="text-warning"> Arena Page</h1>
+        <div>
+            <h3>Little Caesars Arena</h3>
+            <hr />
+        </div>
+        <div>
+            <b>Arena capacity:</b>
+
+            Ice hockey: 19,515
+            Basketball: 20,332
+            Concerts: 15,000–22,000
+        </div>
+        <div>
+            <b>Arena concessions:</b> Sales of game tickets, parking, concessions, souvenirs,
+            and any potential naming rights deals would not be subject to revenue sharing with the City of Detroit as they were with Joe Louis Arena.
+        </div>
+        <div>Seating categories: First-class, Middle-class, Regular</div>
+        <div>
+
+            <b>Arena history including year built:</b>
+            Little Caesars Arena is a multi-purpose arena in Midtown Detroit. Construction began on April 24, 2015, following a formal groundbreaking ceremony on September 25, 2014. Opened on September 5, 2017, the arena, which cost $862.9 million to construct, replaced Joe Louis Arena and The Palace of Auburn Hills as the homes of the Detroit Red Wings of the National Hockey League (NHL) and the Detroit Pistons of the National Basketball Association (NBA), respectively.
+        </div>
+        <div>Arena location shown on a map image:</div>
+        <img src="../Images/Arena/CrislerArena.jpg" />
+        <!--<img src="\Images\Arena\arena-little-caesars-01.jpg" />-->
+        <div>
+            Arena image
+        </div>
+    </div>
+    <div class="footer bg-info">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    Arena Name: Little Ceasar Arena
+                </h3>
+            </div>
+            <div class="col-md-4">
+                <div><b>Arena Address:</b> 2645 Woodward Ave, Detroit, MI 48201</div>
+                <div><b>Arena Telphone:</b> (313) 471-7000</div>
+                <div><b>Email Address:</b>  info@littleceasararena.com</div>
+            </div>
+            <div class="col-md-4">
+                <p>© 2021 - Little Ceasar Arena</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <!-- DataTables script -->
+    <script type="text/javascript">
+        "use strict";
+
+        var data =
+            [
+                [
+                    "Drone Racing",
+                    "10 May 2021",
+                    "$25-$45",
+                    "<img src='../Images/Events/Image-DroneRacing.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Elton John",
+                    "20 May 2021",
+                    "$125-$445",
+                    "<img src='../Images/Events/Image-EltonJohn.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Sweater Knitting",
+                    "30 May 2021",
+                    "$25-$45",
+                    "<img src='../Images/Events/Image-Sweater.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "The Beatles",
+                    "10 June 2021",
+                    "$225-$645",
+                    "<img src='../Images/Events/Image-TheBeatles.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Book Reading",
+                    "20 June 2021",
+                    "$25-$45",
+                    "<img src='../Images/Events/Image-Book.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Monster Truck Racing",
+                    "30 June 2021",
+                    "$25-$45",
+                    "<img src='../Images/Events/Image-MonsterTruck.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Evel Knievel",
+                    "10 July 2021",
+                    "$50-$200",
+                    "<img src='../Images/Events/Image-EvelKnievel.jfif' alt='Image Missing!' width='300' height='200'>"
+                ],
+                [
+                    "Wayne State Basketball",
+                    "20 July 2021",
+                    "$25-$45",
+                    "<img src='../Images/Events/Image-Basketball.jfif' alt='Image Missing!' width='300' height='200'>"
+                ]
+            ];
+
+        $(document).ready(function () {
+            $('#tblMenu').DataTable(
+                {
+                    "data": data,
+                    "autoWidth": false
+                });
+            //================================================================
+            // clearFields
+            //================================================================
+            function clearFields() {
+                //hRawData.innerHTML = "Raw data";
+                //tRawData.value = "";
+                //tStringifyData.value = "";
+                //tParseData.value = "";
+
+
+                //tblMenu.innerHTML = "";
+            }
+            //================================================================
+            // convertToAndFromJSON
+            //================================================================
+            function convertToAndFromJSON(obj) {
+
+                // Clear fields
+                clearFields();
+
+                // Show raw object
+                hRawData.innerHTML = "Raw data (object type: " + typeof (obj) + ")";
+                tRawData.value = obj;
+
+                // Stringify and show object
+                var objStringify = JSON.stringify(obj);
+                tStringifyData.value = objStringify;
+
+                // Parse and show object
+                var objParse = JSON.parse(objStringify);
+                tParseData.value = objParse;
+
+            }
+            //================================================================
+            // sendDataViaLocalStorage
+            //================================================================
+            function storeEvents() {
+
+                // Clear storage fields
+                localStorage.removeItem("localArrayUnnamed");
+                localStorage.removeItem("localArrayNamed");
+
+                
+
+                // Place objects (including arrays) in local storage
+                // Objects must be stringified when placed in localStorage
+                
+                localStorage.setItem("localArrayUnnamed", JSON.stringify(data));
+
+                // Open other page
+                //window.open("JSONStringifyAndParse-DataPage.html", "_self");
+
+            }
+            storeEvents();
+        });
+
+    </script>
+</body>
+</html>
