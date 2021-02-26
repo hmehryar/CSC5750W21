@@ -1,7 +1,10 @@
 ﻿body {
 }
+.arena-img {
+    width:400px;
+}
 .event-img-width {
-    width:200px;
+    width: 200px;
 }
 img.arena-seating-chart {
     width:50%;
