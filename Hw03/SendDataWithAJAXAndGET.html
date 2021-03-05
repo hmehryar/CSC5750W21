@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<!--==================================================================
+//
+// Title: Send Data With AJAX And GET
+// Description:
+//   This web page takes data and sends them to the server using AJAX 
+// and GET.  You must copy this and associated files to a server to 
+// run it.  It refers to the following files:
+//   SendDataWithAJAXAndGETResponse.php
+//   AJAXStyles.css
+//   Utilities.js
+// 
+//=================================================================-->
+
+<head>
+
+  <title>Send Data With AJAX And GET</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Dan Ouellette">
+  <meta name="description" content="Send Data With AJAX And GET">
+  <meta name="keywords" content="AJAX, GET">
+  <script src="Utilities.js"></script>
+  <link rel="stylesheet" type="text/css" href="AJAXStyles.css">
+
+  <script type="text/javascript">
+    "use strict";
+    
+    //================================================================
+    // sendData
+    //================================================================
+    function sendData()
+    {
+    
+      // Declare variables
+      var first = txtFirstName.value;
+      var last = txtLastName.value;
+      var qstring;
+
+      // Test input values and prepare query string
+      if (first.length == 0) first = "(none)";
+      if (last.length == 0) last = "(none)";
+      qstring = "first=" + first + "&last=" + last;
+      
+      // Clear response
+      taResponse.value = "";
+
+      // Attempt to communicate with server
+      try
+      {
+      
+        // Create server request
+        var xhttp = new XMLHttpRequest();
+      
+        // Define callback function
+        xhttp.onreadystatechange = function() 
+        {
+          if (this.readyState == 4 && this.status == 200)
+            taResponse.value = this.responseText;
+        };
+        
+        // Define command and send
+        xhttp.open("GET", "SendDataWithAJAXAndGETResponse.php?" + 
+          qstring, true);
+        xhttp.send();
+        
+      }
+      catch (ex)
+      {
+        window.alert("Error" + "\nName: " + ex.name + 
+          "\nMessage: " + ex.message + "\nStack: " + ex.stack);
+      }
+
+    }
+        
+    //==================================================
+    // clearData
+    //==================================================
+    function clearData()
+    {
+      txtFirstName.value = "";
+      txtLastName.value = "";
+      taResponse.value = "";
+    }
+
+  </script>
+
+</head>
+ 
+<body id="bPage" onload="randomizeBackgroundColor()">
+
+  <h1>Send Data With AJAX And GET</h1>
+    
+  <!--================================================================
+  // Input field set
+  //===============================================================-->
+
+  <fieldset>
+    <legend>Data sent from client</legend>
+    
+    <label>First name:</label>
+    <input type="text" id="txtFirstName">
+    <br><br>
+    
+    <label>Last name:</label>
+    <input type="text" id="txtLastName">
+    <br><br>
+
+  </fieldset>
+  <br>
+  
+  <button 
+    type="button" 
+    onclick="sendData()">
+    Send Data
+  </button>
+  <br><br>
+  
+  <!--================================================================
+  // Response field set
+  //===============================================================-->
+
+  <fieldset>
+    <legend>Data received from server</legend>
+
+    <label>responseText:</label>
+    <br><br>
+    <textarea id="taResponse" rows="4" readonly></textarea>
+    <br><br>
+    
+  </fieldset>
+  <br>
+  
+  <button 
+    type="button" 
+    onclick="clearData()">
+    Clear Data
+  </button>
+  <br>
+
+</body>
+ 
+</html>
