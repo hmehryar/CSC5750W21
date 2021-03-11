@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Arena page, v2</title>
+    <title>Arena page, v3</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
                     width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
         <div class="col-md-5">
-            <img src="../Images/Arena/CrislerArena.jpg" class="arena-img"/>
+            <img src="../Images/Arena/CrislerArena.jpg" class="arena-img" />
             <!--<img src="\Images\Arena\arena-little-caesars-01.jpg" />-->
         </div>
     </div>
@@ -79,15 +79,20 @@
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
+    <script type="text/javascript" src="../Scripts/Events.json"></script>
     <!-- DataTables script -->
     <script type="text/javascript">
         "use strict";
 
-       
 
+        var data = JSON.stringify(data);
+        console.log(data);
         $(document).ready(function () {
-            
+            $('#tblMenu').DataTable(
+                {
+                    "data": data,
+                    "autoWidth": false
+                });
             //================================================================
             // clearFields
             //================================================================
@@ -121,8 +126,28 @@
                 tParseData.value = objParse;
 
             }
-            
-            
+            //================================================================
+            // sendDataViaLocalStorage
+            //================================================================
+            //function storeEvents() {
+
+            //    // Clear storage fields
+            //    localStorage.removeItem("localArrayUnnamed");
+            //    localStorage.removeItem("localArrayNamed");
+
+
+
+            //    // Place objects (including arrays) in local storage
+            //    // Objects must be stringified when placed in localStorage
+
+            //    localStorage.setItem("localArrayUnnamed", JSON.stringify(data));
+
+            //    // Open other page
+            //    //window.open("JSONStringifyAndParse-DataPage.html", "_self");
+
+            //}
+            //storeEvents();
+            console.log(JSON.stringify(data));
         });
 
     </script>
